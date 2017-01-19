@@ -1,4 +1,5 @@
 var request = require('superagent');
+var startpagega = require('./startpagega.js');
 
 function testRequest() {
   request
