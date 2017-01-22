@@ -8,12 +8,14 @@
     <title>Startpage</title>
 
     <link href="vendor/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.statuspage.io/se-v2.js"></script>
 
     <link rel="stylesheet" href="css/styles.css">
   </head>
+
   <body>
     <header>
-      <nav class="navbar navbar-default">
+      <nav class="navbar navbar-fixed-top">
         <div class="container-fluid">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -22,36 +24,21 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Brand</a>
+            <a class="navbar-brand" href="#">Dashboard</a>
           </div>
 
 
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-              <li><a href="#">Link</a></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li><a href="#">Separated link</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li><a href="#">One more separated link</a></li>
-                </ul>
-              </li>
+
+              <li><a href="#sec-services">Service</a></li>
+              <li><a href="#sec-analytics">Analytics</a></li>
+              <li><a href="#sec-misc">Misc</a></li>
+
             </ul>
-            <form class="navbar-form navbar-left">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search">
-              </div>
-              <button type="submit" class="btn btn-default">Submit</button>
-            </form>
+
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="#">Link</a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                 <ul class="dropdown-menu">
@@ -63,60 +50,93 @@
                 </ul>
               </li>
             </ul>
-          </div><!-- /.navbar-collapse -->
+          </div>
         </div>
 
       </nav>
     </header>
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-3">
-          <h2>Stripe</h2>
-          <div id="status-stripe"></div>
+
+      <section id="sec-services">
+
+        <div class="row">
+          <h2>Services</h2>
+          <div class="col-sm-4">
+            <h3>Stripe</h3>
+            <div id="status-stripe"></div>
+          </div>
+
+          <div class="col-sm-4">
+            <h3>Intercom</h3>
+            <div id="status-intercom"></div>
+          </div>
         </div>
 
-        <div class="col-sm-3">
-          <h2>GA</h2>
-          <section id="auth-button"></section>
-          <section id="view-selector"></section>
-          <section id="timeline"></section>
+      </section>
 
-          <script>
-           (function(w,d,s,g,js,fjs){
-             g=w.gapi||(w.gapi={});g.analytics={q:[],ready:function(cb){this.q.push(cb)}};
-             js=d.createElement(s);fjs=d.getElementsByTagName(s)[0];
-             js.src='https://apis.google.com/js/platform.js';
-             fjs.parentNode.insertBefore(js,fjs);js.onload=function(){g.load('analytics')};
-           }(window,document,'script'));
-          </script>
+      <section id="sec-analytics">
+
+        <div class="row">
+          <h2>Analytics</h2>
+          <div class="col-sm-11">
+            <div class="row">
+              <span class="col-sm-2"><h3>GA</h3></span>
+              <span class="col-sm-2"><div id="auth-button"></div></span>
+              <span class="col-sm-2"><div id="view-selector"></div></span>
+            </div>
+            <div class="row">
+              <div class="col-sm-5">
+                <h4>Timeline</h4>
+                <div id="timeline"></div>
+              </div>
+            </div>
+
+            <script>
+             (function(w,d,s,g,js,fjs){
+               g=w.gapi||(w.gapi={});g.analytics={q:[],ready:function(cb){this.q.push(cb)}};
+               js=d.createElement(s);fjs=d.getElementsByTagName(s)[0];
+               js.src='https://apis.google.com/js/platform.js';
+               fjs.parentNode.insertBefore(js,fjs);js.onload=function(){g.load('analytics')};
+             }(window,document,'script'));
+            </script>
+          </div>
         </div>
 
-      </div>
+      </section>
+
+      <section id="sec-misc">
+        <div class="row" id="row-misc">
+          <h2>Misc</h2>
+
+          <div class="col-sm-3">
+            <h3>Useful stuff</h3>
+            <div class="list-group">
+              <a class="list-group-item" href="https://mailtrap.io/">Mailtrap</a>
+              <a class="list-group-item" href="https://analytics.google.com/">Google Analytics</a>
+              <a class="list-group-item" href="https://gtmetrix.com/">GTmetrix</a>
+              <a class="list-group-item" href="https://developers.google.com/speed/pagespeed/insights">Google Pagespeed Insights</a>
+            </div class="list-group">
+          </div>
+
+          <div class="col-sm-3">
+            <h3>Procrastination</h3>
+            <div class="list-group">
+              <a class="list-group-item" href="https://www.reddit.com">Reddit</a>
+              <a class="list-group-item" href="https://news.ycombinator.com">Hacker News</a>
+              <a class="list-group-item" href="https://lobste.rs">Lobste.rs</a>
+            </div class="list-group">
+          </div>
+
+          <div class="col-sm-3">
+            <h3>Stuff</h3>
+          </div>
+          <div class="col-sm-3">
+            <h3>Stuff</h3>
+          </div>
+        </div>
+      </section>
+
     </div>
-
-
-    <section>
-      <h2>Misc</h2>
-      <div class="container">
-        <ul>
-          <li><a href="https://mailtrap.io/">Mailtrap</a></li>
-          <li><a href="https://analytics.google.com/">Google Analytics</a></li>
-
-        </ul>
-      </div>
-    </section>
-
-    <section>
-      <h2>Procrastination</h2>
-      <div class="container">
-        <ul>
-          <li><a href="https://www.reddit.com">Reddit</a></li>
-          <li><a href="https://news.ycombinator.com">Hacker News</a></li>
-          <li><a href="https://lobste.rs">Lobste.rs</a></li>
-        </ul>
-      </div>
-    </section>
-
 
     <footer>
       <div id="error-messages">
