@@ -1,5 +1,5 @@
 var request = require('superagent');
-var startpagega = require('./startpagega.js');
+var analytics = require('./analytics.js');
 
 function testRequest() {
   request

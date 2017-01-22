@@ -1,7 +1,7 @@
 {
-  "name": "startpage",
+  "name": "dashboard",
   "version": "1.0.0",
-  "description": "Personal browser startpage",
+  "description": "Personal dashboard",
   "main": "index.js",
   "scripts": {
     "test": "mocha --reporter spec",
@@ -9,7 +9,7 @@
     "build": "webpack",
     "serve": "nodemon src/server.js"
   },
-  "author": "",
+  "author": "Rune Lain Knudsen",
   "license": "ISC",
   "devDependencies": {
     "mocha": "^3.2.0",
